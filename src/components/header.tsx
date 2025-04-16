@@ -8,10 +8,6 @@ const Header: React.FC = () => {
     <nav className="bg-white shadow-sm fixed w-full z-10">
       <div className="container-section">
         <div className="flex justify-between h-16">
-          <div className="flex-shrink-0 flex items-center">
-            <span className="font-bold text-xl">Hillori Desai Awasthi</span>
-          </div>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#about" className="hover:text-primary-600 font-medium">
@@ -31,6 +27,9 @@ const Header: React.FC = () => {
               className="hover:text-primary-600 font-medium"
             >
               Publications
+            </a>
+            <a href="#interests" className="hover:text-primary-600 font-medium">
+              Interests
             </a>
             <a href="#contact" className="btn-primary">
               Contact
@@ -80,6 +79,13 @@ const Header: React.FC = () => {
               className="block px-3 py-2 rounded hover:bg-gray-100"
             >
               Publications
+            </a>
+            <a
+              href="#interests"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 rounded hover:bg-gray-100"
+            >
+              Interests
             </a>
             <a
               href="#contact"

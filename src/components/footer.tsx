@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex space-x-6">
             <a
-              href="https://github.com/"
+              href="https://github.com/HilloriDesai"
               className="text-gray-300 hover:text-white transition"
             >
               <GitHubIcon />
