@@ -59,12 +59,12 @@ const Projects: React.FC = () => {
         "Agentic AI-powered sales outreach platform with LLM integration and semantic document processing.",
       technologies: [
         "TypeScript",
-        "React",
+        "Next.js",
         "Node.js",
         "Weaviate",
         "OpenAI/Anthropic",
       ],
-      badge: "Y Combinator '23 Product",
+      badge: "B2B AI-heavy SaaS Product",
       link: "https://console.floworks.ai/",
     },
     {
@@ -79,7 +79,12 @@ const Projects: React.FC = () => {
       title: "Zeus Cloud Defender",
       description:
         "Cloud security posture management tool with dynamic asset graphing and real-time threat mitigation.",
-      technologies: ["React", "Microservices", "Cloud Security", "GCP/AWS"],
+      technologies: [
+        "React",
+        "Microservices",
+        "Cloud Security",
+        "GCP/AWS/Azure",
+      ],
       badge: "Enterprise Product",
       link: "",
     },
@@ -87,7 +92,7 @@ const Projects: React.FC = () => {
       title: "MicroVax",
       description:
         "COVID-19 internal vaccination platform built in under 3 weeks, supporting 4000+ employees.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Authentication"],
+      technologies: ["React", "Python", "PostgreSQL", "Authentication"],
       badge: "CEO Recognition",
       link: "https://www.microland.com/pr/microvax-for-covid19",
     },

@@ -23,7 +23,7 @@ const Publications: React.FC = () => {
                 enable powerful assistants with smaller models.
               </p>
               <a
-                href="#"
+                href="https://arxiv.org/abs/2410.17950"
                 className="text-primary-600 hover:underline mt-4 inline-flex items-center"
               >
                 <span>Read Publication</span>

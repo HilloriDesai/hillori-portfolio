@@ -11,7 +11,7 @@ import Footer from "../components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-900">
       <Head>
         <title>Hillori | Portfolio</title>
         <meta name="description" content="Personal portfolio website" />

@@ -1,61 +1,239 @@
+import React from "react";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiPython,
+  SiCplusplus,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiDjango,
+  SiRedux,
+  SiTailwindcss,
+  SiDocker,
+  SiKubernetes,
+  SiRedis,
+  SiRabbitmq,
+  SiTerraform,
+  SiGooglecloud,
+  SiPostgresql,
+  SiMongodb,
+  SiClickhouse,
+  SiGrafana,
+  SiPrometheus,
+  SiAnthropic,
+} from "react-icons/si";
+import { TbBrandOpenai } from "react-icons/tb";
+import {
+  FaDatabase,
+  FaServer,
+  FaCode,
+  FaBrain,
+  FaTools,
+  FaChartLine,
+  FaAws,
+} from "react-icons/fa";
+
 const About: React.FC = () => {
   const skills = {
-    languages: "TypeScript, JavaScript, Python, SQL, C++, Bash",
-    frameworks:
-      "React.js, Next.js, Node.js, Express.js, Django, Redux, RxJS, TailwindCSS",
-    aiTools:
-      "RAG, Prompt Engineering, ThorV2, Weaviate, OpenAI/Anthropic APIs, Cursor AI",
-    infrastructure:
-      "Docker, Kubernetes, Redis, BullMQ, RabbitMQ, Terraform, ArgoCD, Helm, OpenShift, GCP/AWS/Azure",
-    databases: "PostgreSQL, MongoDB, Redis, ClickHouse, Prisma",
-    monitoring: "Grafana, Prometheus, Loki",
+    languages: [
+      { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
+      {
+        name: "JavaScript",
+        icon: <SiJavascript className="text-yellow-400" />,
+      },
+      { name: "Python", icon: <SiPython className="text-blue-600" /> },
+      { name: "SQL", icon: <FaDatabase className="text-blue-700" /> },
+      { name: "C++", icon: <SiCplusplus className="text-blue-800" /> },
+    ],
+    frameworks: [
+      { name: "React.js", icon: <SiReact className="text-blue-400" /> },
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs className="text-black" />,
+      },
+      { name: "Node.js", icon: <SiNodedotjs className="text-green-600" /> },
+      {
+        name: "Express.js",
+        icon: <SiExpress className="text-gray-800" />,
+      },
+      { name: "Django", icon: <SiDjango className="text-green-800" /> },
+      { name: "Redux", icon: <SiRedux className="text-purple-600" /> },
+      {
+        name: "TailwindCSS",
+        icon: <SiTailwindcss className="text-cyan-500" />,
+      },
+    ],
+    aiTools: [
+      { name: "RAG", icon: <FaBrain className="text-purple-500" /> },
+      {
+        name: "Prompt Engineering",
+        icon: <FaTools className="text-orange-500" />,
+      },
+      { name: "ThorV2", icon: <FaCode className="text-blue-600" /> },
+      { name: "Weaviate", icon: <FaDatabase className="text-blue-700" /> },
+      { name: "OpenAI", icon: <TbBrandOpenai className="text-green-600" /> },
+      {
+        name: "Anthropic",
+        icon: <SiAnthropic className="text-purple-600" />,
+      },
+    ],
+    infrastructure: [
+      { name: "Docker", icon: <SiDocker className="text-blue-500" /> },
+      { name: "Kubernetes", icon: <SiKubernetes className="text-blue-600" /> },
+      { name: "Redis", icon: <SiRedis className="text-red-500" /> },
+      { name: "RabbitMQ", icon: <SiRabbitmq className="text-orange-500" /> },
+      { name: "Terraform", icon: <SiTerraform className="text-purple-600" /> },
+      { name: "AWS", icon: <FaAws className="text-orange-500" /> },
+      { name: "GCP", icon: <SiGooglecloud className="text-blue-500" /> },
+    ],
+    databases: [
+      { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-600" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+      { name: "Redis", icon: <SiRedis className="text-red-500" /> },
+      { name: "ClickHouse", icon: <SiClickhouse className="text-blue-700" /> },
+    ],
+    monitoring: [
+      { name: "Grafana", icon: <SiGrafana className="text-orange-500" /> },
+      { name: "Prometheus", icon: <SiPrometheus className="text-red-600" /> },
+      { name: "Loki", icon: <FaChartLine className="text-blue-500" /> },
+    ],
   };
 
   return (
     <section id="about" className="py-16 bg-white">
       <div className="container-section">
-        <h2 className="section-title">About Me</h2>
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-lg shadow-sm border border-gray-200 mb-8">
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">About Me</h3>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            I am a passionate software engineer with expertise in building
+            scalable applications and AI solutions. With a strong foundation in
+            both frontend and backend technologies, I enjoy solving complex
+            problems and creating efficient, user-friendly solutions.
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            My experience spans across various domains including web
+            development, distributed systems, and artificial intelligence. I am
+            constantly learning and exploring new technologies to stay at the
+            forefront of the industry.
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            When I&apos;m not coding, you can find me creating content for my
+            YouTube channel, recording podcasts, or exploring new places around
+            the world.
+          </p>
+        </div>
+        <div className="flex m-2 my-6">
           <div>
-            <p className="text-lg">
-              Software Engineer with 6+ years of experience in designing and
-              scaling distributed systems, with expertise in product thinking,
-              full-stack engineering, and cloud-native infrastructure. Proven
-              experience in leading engineering teams, building scalable
-              systems, and enterprise grade generative AI based products.
-            </p>
-            <p className="text-lg mt-4">
-              Currently building AI-powered solutions at FloWorks AI, focusing
-              on LLM orchestration, agent-based systems, and creating seamless
-              AI-human interactions that solve real business problems.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Technical Skills</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-medium">Languages</h4>
-                <p className="text-gray-600">{skills.languages}</p>
+            <h3 className="text-xl font-semibold mb-6 text-gray-800">
+              Technical Skills
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-8">
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center text-gray-700">
+                    <FaCode className="mr-2 text-primary-600" /> Languages
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.languages.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center bg-gray-100 px-3 py-1.5 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                      >
+                        <span className="mr-1.5">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center text-gray-700">
+                    <FaTools className="mr-2 text-primary-600" /> Frameworks
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.frameworks.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center bg-gray-100 px-3 py-1.5 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                      >
+                        <span className="mr-1.5">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center text-gray-700">
+                    <FaBrain className="mr-2 text-primary-600" /> AI/LLM Tools
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.aiTools.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center bg-gray-100 px-3 py-1.5 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                      >
+                        <span className="mr-1.5">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div>
-                <h4 className="font-medium">Frameworks</h4>
-                <p className="text-gray-600">{skills.frameworks}</p>
-              </div>
-              <div>
-                <h4 className="font-medium">AI/LLM Tools</h4>
-                <p className="text-gray-600">{skills.aiTools}</p>
-              </div>
-              <div>
-                <h4 className="font-medium">Infrastructure</h4>
-                <p className="text-gray-600">{skills.infrastructure}</p>
-              </div>
-              <div>
-                <h4 className="font-medium">Databases</h4>
-                <p className="text-gray-600">{skills.databases}</p>
-              </div>
-              <div>
-                <h4 className="font-medium">Monitoring</h4>
-                <p className="text-gray-600">{skills.monitoring}</p>
+              <div className="space-y-8">
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center text-gray-700">
+                    <FaServer className="mr-2 text-primary-600" />{" "}
+                    Infrastructure
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.infrastructure.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center bg-gray-100 px-3 py-1.5 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                      >
+                        <span className="mr-1.5">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center text-gray-700">
+                    <FaDatabase className="mr-2 text-primary-600" /> Databases
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.databases.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center bg-gray-100 px-3 py-1.5 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                      >
+                        <span className="mr-1.5">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center text-gray-700">
+                    <FaChartLine className="mr-2 text-primary-600" /> Monitoring
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills.monitoring.map((skill, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center bg-gray-100 px-3 py-1.5 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                      >
+                        <span className="mr-1.5">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
