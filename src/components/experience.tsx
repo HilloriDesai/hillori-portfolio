@@ -83,7 +83,7 @@ const Experience: React.FC = () => {
         "Built develop Zeus Cloud Defender, a tool that helps businesses keep their cloud resources secure by visualizing and monitoring their assets.",
         "Led the successful deployment of 10+ 5G telecommunications projects across various cloud platforms, helping companies modernize their infrastructure.",
         "Built Zeus, a user-friendly tool that helps IT teams manage their infrastructure using low-code no-code tool, allowing them to meet customer needs 55% faster.",
-        "I&apos;m proud to have received recognition from our CEO for building MicroVax—a platform that helped vaccinate over 4,000 employees during the COVID-19 pandemic in just 3 weeks.",
+        "I'm proud to have received recognition from our CEO for building MicroVax—a platform that helped vaccinate over 4,000 employees during the COVID-19 pandemic in just 3 weeks.",
       ],
     },
   ];
