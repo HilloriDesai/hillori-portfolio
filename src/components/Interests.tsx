@@ -93,9 +93,10 @@ const Interests: React.FC = () => {
               <h3 className="text-xl font-bold">Podcast</h3>
             </div>
             <p className="text-gray-600 text-gray-300 mb-4">
-              I did a podcast with my fellow Jagriti Yatri as te host on my
-              journey and lessons learned. Do listen to it if you are someone
-              who wants to make a difference in the world.
+              I did a podcast with my fellow Jagriti Yatri as the host, on my
+              journey and lessons learned. Do listen to it if you are would be
+              interested in the journey of someone who wants to make a
+              difference in the world.
             </p>
             <a
               href="https://www.youtube.com/watch?v=V3zfYxTUaM0"
@@ -122,7 +123,8 @@ const Interests: React.FC = () => {
             <div className="flex flex-wrap gap-2 mb-4">
               {travelLocations.map((location, index) => (
                 <span key={index} className="technology-badge">
-                  {location.city} ({location.year})
+                  {location.city}
+                  {/* ({location.year}) */}
                 </span>
               ))}
             </div>

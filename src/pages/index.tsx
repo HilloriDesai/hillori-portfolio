@@ -5,7 +5,7 @@ import About from "../components/about";
 import Experience from "../components/experience";
 import Projects from "../components/projects";
 import Publications from "../components/publications";
-import Interests from "../components/Interests";
+import Interests from "../components/interests";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
 
