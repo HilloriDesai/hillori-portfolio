@@ -49,7 +49,7 @@ const Experience: React.FC = () => {
     {
       company: "FloWorks AI (Y Combinator '23)",
       position: "Technical Lead, Senior Software Engineer",
-      period: "Oct 2024 – Present",
+      period: "Oct 2023 – Present",
       icon: (
         <div className="w-8 h-8 relative">
           <Image
@@ -68,7 +68,7 @@ const Experience: React.FC = () => {
     {
       company: "Microland Ltd.",
       position: "Sr. Technical Lead / Tech PM / Full-stack Engineer",
-      period: "Jul 2019 – Oct 2024",
+      period: "Jul 2019 – Oct 2023",
       icon: (
         <div className="w-8 h-8 relative">
           <Image
