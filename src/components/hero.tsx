@@ -17,21 +17,25 @@ const Hero: React.FC = () => {
 
         <div className="text-center md:text-left max-w-2xl">
           <h1 className="text-3xl sm:text-4xl text-gray-200 font-bold animate-fade-in">
-            Hello there! I am Hillori...
+            Hi, I am Hillori.
           </h1>
           <h2
             className="text-xl mt-4 text-gray-300 animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            I am someone who likes to build things.
-            <br /> Yes, you guessed it, I am a Software Engineer by profession.
+            I am a builder, a dreamer, and a relentless problem-solver.
+            <br /> I believe technology can unlock a brighter, fairer future for
+            all.
           </h2>
           <p
             className="mt-6 text-lg max-w-3xl text-gray-400 animate-slide-up"
             style={{ animationDelay: "0.4s" }}
           >
-            I excel at building scalable distributed systems and
-            enterprise-grade AI solutions and have 6+ years of experience.
+            My mission is to create products or eco-systems that restore
+            dignity, equality & quality of life for millions.
+            <br />I work with first-principles thinking, a hands-on spirit & a
+            deep belief that persistence and empathy can drive real, lasting
+            change.
           </p>
           <div
             className="mt-8 flex justify-center md:justify-start space-x-6 animate-fade-in"

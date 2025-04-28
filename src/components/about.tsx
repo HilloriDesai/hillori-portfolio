@@ -107,21 +107,19 @@ const About: React.FC = () => {
         <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-lg shadow-sm border border-gray-200 mb-8">
           <h3 className="text-xl font-semibold mb-4 text-gray-800">About Me</h3>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            I am a passionate software engineer with expertise in building
-            scalable applications and AI solutions. With a strong foundation in
-            both frontend and backend technologies, I enjoy solving complex
-            problems and creating efficient, user-friendly solutions.
+            I am a passionate software engineer with a love for building
+            scalable applications and AI-driven solutions.
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            My experience spans across various domains including web
-            development, distributed systems, and artificial intelligence. I am
-            constantly learning and exploring new technologies to stay at the
-            forefront of the industry.
+            With hands-on experience across frontend, backend, distributed
+            systems, and artificial intelligence, I enjoy bringing ideas to life
+            by solving complex problems with thoughtful, user-centered designs.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            When I&apos;m not coding, you can find me creating content for my
-            YouTube channel, recording podcasts, or exploring new places around
-            the world.
+            Beyond code, I’m an explorer — constantly learning, growing, and
+            creating. You’ll often find me reading thought-provoking books,
+            sharing knowledge through my YouTube channel, or discovering new
+            corners of the world.
           </p>
         </div>
         <div className="flex m-2 my-6">
