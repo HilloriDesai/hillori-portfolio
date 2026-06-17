@@ -1,109 +1,92 @@
 import { useState } from "react";
+import Link from "next/link";
 import { MenuIcon, XIcon } from "./icons";
 
+const navLinks = [
+  { label: "About",        href: "#about" },
+  { label: "Experience",   href: "#experience" },
+  { label: "Projects",     href: "#projects" },
+  { label: "Publications", href: "#publications" },
+  { label: "Interests",    href: "#interests" },
+];
+
 const Header: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm fixed w-full z-10">
+    <nav
+      className="fixed w-full z-10 border-b border-white/8 backdrop-blur-sm"
+      style={{ background: "rgba(13, 31, 26, 0.95)" }}
+    >
       <div className="container-section">
-        <div className="flex justify-between h-16">
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="hover:text-primary-600 font-medium">
-              About
-            </a>
-            <a
-              href="#experience"
-              className="hover:text-primary-600 font-medium"
+        <div className="flex justify-between h-16 items-center">
+
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-7">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium transition-colors duration-150"
+                style={{ color: "#94a3b8" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#2dd4bf")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#94a3b8")}
+              >
+                {l.label}
+              </a>
+            ))}
+            <Link
+              href="/research"
+              className="text-sm font-medium transition-colors duration-150"
+              style={{ color: "#5eead4" }}
             >
-              Experience
-            </a>
-            <a href="#projects" className="hover:text-primary-600 font-medium">
-              Projects
-            </a>
-            <a
-              href="#publications"
-              className="hover:text-primary-600 font-medium"
-            >
-              Publications
-            </a>
-            <a href="#interests" className="hover:text-primary-600 font-medium">
-              Interests
-            </a>
-            <a href="/research" className="hover:text-primary-600 font-medium">
               AI Research
-            </a>
-            <a href="#contact" className="btn-primary">
+            </Link>
+            <a href="#contact" className="btn-primary text-sm">
               Contact
             </a>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2"
-            >
-              {mobileMenuOpen ? <XIcon /> : <MenuIcon />}
+          {/* Mobile toggle */}
+          <div className="md:hidden flex items-center ml-auto">
+            <button onClick={() => setOpen(!open)} className="p-2" style={{ color: "#94a3b8" }}>
+              {open ? <XIcon /> : <MenuIcon />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded hover:bg-gray-100"
-            >
-              About
-            </a>
-            <a
-              href="#experience"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded hover:bg-gray-100"
-            >
-              Experience
-            </a>
-            <a
-              href="#projects"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded hover:bg-gray-100"
-            >
-              Projects
-            </a>
-            <a
-              href="#publications"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded hover:bg-gray-100"
-            >
-              Publications
-            </a>
-            <a
-              href="#interests"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded hover:bg-gray-100"
-            >
-              Interests
-            </a>
-            <a
+      {open && (
+        <div
+          className="md:hidden border-t border-white/8"
+          style={{ background: "rgba(13, 31, 26, 0.98)" }}
+        >
+          <div className="px-4 py-4 flex flex-col gap-1">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-150"
+                style={{ color: "#94a3b8" }}
+              >
+                {l.label}
+              </a>
+            ))}
+            <Link
               href="/research"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded hover:bg-gray-100"
+              onClick={() => setOpen(false)}
+              className="block px-3 py-2.5 rounded-lg text-sm font-medium"
+              style={{ color: "#5eead4" }}
             >
               AI Research
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 bg-primary-600 text-white rounded"
-            >
-              Contact
-            </a>
+            </Link>
+            <div className="pt-2">
+              <a href="#contact" onClick={() => setOpen(false)} className="btn-primary block text-center text-sm">
+                Contact
+              </a>
+            </div>
           </div>
         </div>
       )}

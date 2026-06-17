@@ -27,7 +27,7 @@ function buildPrompt(c: Candidate): string {
     ? `\nNOTE: At least one author appears to belong to a lab the reader is tracking: ${lab.name} — ${lab.lead}, ${lab.institution}. If that's consistent with the paper, mention it in "aboutContext".`
     : "";
 
-  return `You are helping someone who is NEW to AI-for-learning research and is preparing to apply for a CS PhD (ETH Zurich / EPFL) in this area. They will read a short daily digest on their website.
+  return `You are helping someone who is NEW to AI-for-learning research and wants to learn all about application of AI in education field. They will read a short daily digest on their website.
 
 Here is a paper from arXiv.
 

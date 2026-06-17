@@ -7,9 +7,9 @@
   --paper: #f6f7f9;
   --card: #ffffff;
   --line: #e4e8ee;
-  --accent: #2f5d8a;       /* scholarly blue */
-  --accent-soft: #eaf1f8;  /* plain-terms callout background */
-  --chip: #eef1f5;
+  --accent: #0d9488;       /* teal — tech/AI/learning */
+  --accent-soft: #f0fdfa;  /* teal tint callout background */
+  --chip: #f0fdf9;
 
   max-width: 760px;
   margin: 0 auto;

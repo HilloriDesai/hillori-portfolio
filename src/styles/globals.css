@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #f0f9ff;
-  --color-primary-100: #e0f2fe;
-  --color-primary-200: #bae6fd;
-  --color-primary-300: #7dd3fc;
-  --color-primary-400: #38bdf8;
-  --color-primary-500: #0ea5e9;
-  --color-primary-600: #0284c7;
-  --color-primary-700: #0369a1;
-  --color-primary-800: #075985;
-  --color-primary-900: #0c4a6e;
+  /* Forest Teal — exploration, discovery, science */
+  --color-primary-50:  #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #99f6e4;
+  --color-primary-300: #5eead4;
+  --color-primary-400: #2dd4bf;
+  --color-primary-500: #14b8a6;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
 }
 
 @layer base {
@@ -18,15 +20,16 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-slate-50;
+    background-color: #f8fffe;
+    color: #334155;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: #0c1a14;
+  }
+  p {
+    color: #334155;
   }
 }
 
@@ -34,43 +37,46 @@
   .container-section {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+  .section-eyebrow {
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    @apply text-xs uppercase tracking-widest text-primary-600 mb-3;
+  }
   .section-title {
-    @apply text-3xl font-bold mb-8;
+    @apply text-4xl font-bold mb-8;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: #0c1a14;
   }
   .btn-primary {
-    @apply bg-primary-600 text-white px-4 py-2 rounded font-medium hover:bg-primary-700 transition duration-300;
+    @apply bg-primary-700 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-primary-800 transition duration-200 inline-block;
   }
   .technology-badge {
-    @apply bg-slate-100 text-slate-800 text-xs px-2 py-1 rounded;
+    @apply bg-primary-50 text-primary-800 border border-primary-100 text-xs px-2.5 py-1 rounded-full;
+  }
+  .hero-dot-grid {
+    background-image: radial-gradient(
+      circle,
+      rgba(20, 184, 166, 0.14) 1.5px,
+      transparent 1.5px
+    );
+    background-size: 28px 28px;
   }
 }
 
-/* Animation keyframes */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 1s ease-out forwards;
+  animation: fadeIn 0.9s ease-out forwards;
 }
 
 .animate-slide-up {
-  animation: slideUp 0.8s ease-out forwards;
+  animation: slideUp 0.7s ease-out forwards;
   opacity: 0;
 }

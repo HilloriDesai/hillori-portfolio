@@ -15,61 +15,43 @@ interface TravelLocation {
 }
 
 const travelLocations: TravelLocation[] = [
-  {
-    city: "Western Karnataka",
-    country: "India",
-    coordinates: [13.3409, 74.7421],
-    year: "2024",
-  },
-  {
-    city: "Kerala",
-    country: "India",
-    coordinates: [10.1632, 76.6413],
-    year: "2023",
-  },
-  {
-    city: "Bali",
-    country: "Indonesia",
-    coordinates: [8.4095, -115.1889],
-    year: "2023",
-  },
-  {
-    city: "Bastar",
-    country: "India",
-    coordinates: [19.1071, 81.9535],
-    year: "2022",
-  },
-  {
-    city: "Kashmir",
-    country: "India",
-    coordinates: [33.2778, -75.3412],
-    year: "2016",
-  },
-
-  {
-    city: "Andaman & Nicobar",
-    country: "India",
-    coordinates: [10.7449, 92.5],
-    year: "2007",
-  },
+  { city: "Western Karnataka", country: "India", coordinates: [13.3409, 74.7421], year: "2024" },
+  { city: "Kerala", country: "India", coordinates: [10.1632, 76.6413], year: "2023" },
+  { city: "Bali", country: "Indonesia", coordinates: [8.4095, -115.1889], year: "2023" },
+  { city: "Bastar", country: "India", coordinates: [19.1071, 81.9535], year: "2022" },
+  { city: "Kashmir", country: "India", coordinates: [33.2778, -75.3412], year: "2016" },
+  { city: "Andaman & Nicobar", country: "India", coordinates: [10.7449, 92.5], year: "2007" },
 ];
+
+const InterestCard: React.FC<{
+  icon: React.ReactNode;
+  iconBg: string;
+  title: string;
+  children: React.ReactNode;
+}> = ({ icon, iconBg, title, children }) => (
+  <div className="bg-white rounded-xl shadow-sm border border-stone-100 p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+    <div className="flex items-center mb-4">
+      <div className={`${iconBg} p-3 rounded-full mr-4`}>{icon}</div>
+      <h3 className="text-xl font-bold text-gray-800">{title}</h3>
+    </div>
+    {children}
+  </div>
+);
 
 const Interests: React.FC = () => {
   return (
-    <section id="interests" className="py-16 bg-gray-50">
+    <section id="interests" className="py-20 bg-white">
       <div className="container-section">
-        <h2 className="section-title text-center mb-12">Interests & Hobbies</h2>
+        <p className="section-eyebrow">Beyond work</p>
+        <h2 className="section-title mb-12">Interests & hobbies.</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* YouTube Channel */}
-          <div className="bg-white bg-primary-50 p-6 rounded-lg shadow-md p-6 transition-transform hover:scale-105">
-            <div className="flex items-center mb-4">
-              <div className="bg-red-100 bg-red-100 p-3 rounded-full mr-4">
-                <FaYoutube className="text-red-700 text-red-100 text-2xl" />
-              </div>
-              <h3 className="text-xl font-bold">YouTube Channel</h3>
-            </div>
-            <p className="text-gray-600 text-gray-300 mb-4">
+          <InterestCard
+            icon={<FaYoutube className="text-red-600 text-2xl" />}
+            iconBg="bg-red-50"
+            title="YouTube Channel"
+          >
+            <p className="text-gray-600 mb-4">
               I run a YouTube channel where I share videos about chasing dreams,
               science, tech and more. Subscribe to stay updated with my latest
               content!
@@ -82,19 +64,16 @@ const Interests: React.FC = () => {
             >
               Visit Channel
             </a>
-          </div>
+          </InterestCard>
 
-          {/* Podcast */}
-          <div className="bg-white bg-gray-700 rounded-lg shadow-md p-6 transition-transform hover:scale-105">
-            <div className="flex items-center mb-4">
-              <div className="bg-purple-100 bg-purple-100 p-3 rounded-full mr-4">
-                <FaPodcast className="text-purple-400 text-purple-100 text-2xl" />
-              </div>
-              <h3 className="text-xl font-bold">Podcast</h3>
-            </div>
-            <p className="text-gray-600 text-gray-300 mb-4">
+          <InterestCard
+            icon={<FaPodcast className="text-purple-600 text-2xl" />}
+            iconBg="bg-purple-50"
+            title="Podcast"
+          >
+            <p className="text-gray-600 mb-4">
               I did a podcast with my fellow Jagriti Yatri as the host, on my
-              journey and lessons learned. Do listen to it if you are would be
+              journey and lessons learned. Do listen to it if you would be
               interested in the journey of someone who wants to make a
               difference in the world.
             </p>
@@ -106,39 +85,32 @@ const Interests: React.FC = () => {
             >
               Listen Now
             </a>
-          </div>
+          </InterestCard>
 
-          {/* Travel */}
-          <div className="bg-white bg-gray-700 rounded-lg shadow-md p-6 transition-transform hover:scale-105">
-            <div className="flex items-center mb-4">
-              <div className="bg-blue-100 bg-blue-100 p-3 rounded-full mr-4">
-                <FaPlane className="text-blue-400 text-blue-100 text-2xl" />
-              </div>
-              <h3 className="text-xl font-bold">Travel</h3>
-            </div>
-            <p className="text-gray-600 text-gray-300 mb-4">
+          <InterestCard
+            icon={<FaPlane className="text-teal-600 text-2xl" />}
+            iconBg="bg-teal-50"
+            title="Travel"
+          >
+            <p className="text-gray-600 mb-4">
               I love exploring new places and experiencing different cultures.
               Here are some of the places I have visited:
             </p>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2">
               {travelLocations.map((location, index) => (
                 <span key={index} className="technology-badge">
                   {location.city}
-                  {/* ({location.year}) */}
                 </span>
               ))}
             </div>
-          </div>
+          </InterestCard>
 
-          {/* Instagram */}
-          <div className="bg-white bg-gray-700 rounded-lg shadow-md p-6 transition-transform hover:scale-105">
-            <div className="flex items-center mb-4">
-              <div className="bg-pink-100 bg-pink-100 p-3 rounded-full mr-4">
-                <FaInstagram className="text-pink-400 text-pink-100 text-2xl" />
-              </div>
-              <h3 className="text-xl font-bold">Instagram</h3>
-            </div>
-            <p className="text-gray-600 text-gray-300 mb-4">
+          <InterestCard
+            icon={<FaInstagram className="text-pink-500 text-2xl" />}
+            iconBg="bg-pink-50"
+            title="Instagram"
+          >
+            <p className="text-gray-600 mb-4">
               Follow my Instagram page for behind-the-scenes content from my
               YouTube channel and personal life.
             </p>
@@ -150,34 +122,19 @@ const Interests: React.FC = () => {
             >
               Follow Me
             </a>
-          </div>
+          </InterestCard>
 
-          {/* Family Time */}
-          <div className="bg-white bg-gray-700 rounded-lg shadow-md p-6 transition-transform hover:scale-105">
-            <div className="flex items-center mb-4">
-              <div className="bg-green-100 bg-green-100 p-3 rounded-full mr-4">
-                <FaHeart className="text-green-400 text-green-100 text-2xl" />
-              </div>
-              <h3 className="text-xl font-bold">Family Time</h3>
-            </div>
-            <p className="text-gray-600 text-gray-300 mb-4">
+          <InterestCard
+            icon={<FaHeart className="text-rose-500 text-2xl" />}
+            iconBg="bg-rose-50"
+            title="Family Time"
+          >
+            <p className="text-gray-600">
               I cherish spending quality time with my family. Whether it&apos;s
               weekend getaways, family dinners, or just relaxing together, these
               moments are precious to me.
             </p>
-            {/* <div className="grid grid-cols-2 gap-2">
-              <div className="bg-gray-100 bg-gray-600 h-24 rounded-lg flex items-center justify-center">
-                <span className="text-gray-500 text-gray-400">
-                  Family Photo
-                </span>
-              </div>
-              <div className="bg-gray-100 bg-gray-600 h-24 rounded-lg flex items-center justify-center">
-                <span className="text-gray-500 text-gray-400">
-                  Family Photo
-                </span>
-              </div>
-            </div> */}
-          </div>
+          </InterestCard>
         </div>
       </div>
     </section>

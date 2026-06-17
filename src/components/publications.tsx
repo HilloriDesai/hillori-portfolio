@@ -1,35 +1,36 @@
-import { BookOpenIcon, ExternalLinkIcon } from "./icons";
+import { ExternalLinkIcon } from "./icons";
 
 const Publications: React.FC = () => {
   return (
-    <section id="publications" className="py-16 bg-gray-50">
+    <section id="publications" className="py-20" style={{ background: "#f0fdfa" }}>
       <div className="container-section">
-        <h2 className="section-title">Publications</h2>
+        <p className="section-eyebrow">Research</p>
+        <h2 className="section-title">Publications.</h2>
 
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <div className="flex items-start">
-            <BookOpenIcon className="text-primary-600 mr-4 mt-1 flex-shrink-0" />
-            <div>
-              <h3 className="text-xl font-bold">
-                Benchmarking Floworks against OpenAI & Anthropic: A Novel
-                Framework for Enhanced LLM Function Calling
-              </h3>
-              <p className="text-gray-600 mt-2">Co-author — Published 2024</p>
-              <p className="mt-4">
-                Built ThorV2, a scalable LLM orchestration layer that
-                outperforms standalone GPT-4 and Claude on multi-API workflows
-                in terms of reliability, accuracy, latency, and cost.
-                Benchmarked on HubSpot CRM operations and shows potential to
-                enable powerful assistants with smaller models.
-              </p>
-              <a
-                href="https://arxiv.org/abs/2410.17950"
-                className="text-primary-600 hover:underline mt-4 inline-flex items-center"
-              >
-                <span>Read Publication</span>
-                <ExternalLinkIcon className="ml-1" />
-              </a>
-            </div>
+        <div className="max-w-3xl">
+          <div className="bg-white rounded-2xl border border-gray-100 p-8 hover:border-primary-200 transition-colors duration-200">
+            <p className="text-xs font-mono uppercase tracking-widest text-primary-600 mb-3">
+              Co-author · 2024
+            </p>
+            <h3 className="text-2xl font-bold mb-4 leading-snug" style={{ color: "#0c1a14" }}>
+              Benchmarking Floworks against OpenAI & Anthropic: A Novel
+              Framework for Enhanced LLM Function Calling
+            </h3>
+            <p className="leading-relaxed mb-6" style={{ color: "#475569" }}>
+              Built ThorV2, a scalable LLM orchestration layer that outperforms
+              standalone GPT-4 and Claude on multi-API workflows in terms of
+              reliability, accuracy, latency, and cost. Benchmarked on HubSpot
+              CRM operations — shows potential to enable powerful assistants
+              with smaller models.
+            </p>
+            <a
+              href="https://arxiv.org/abs/2410.17950"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 font-medium text-primary-700 hover:text-primary-900 transition-colors duration-150"
+            >
+              Read on arXiv <ExternalLinkIcon />
+            </a>
           </div>
         </div>
       </div>

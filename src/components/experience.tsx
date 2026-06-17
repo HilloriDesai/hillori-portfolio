@@ -1,6 +1,6 @@
 import React from "react";
-import { FaBriefcase, FaCalendarAlt } from "react-icons/fa";
 import Image from "next/image";
+import { FaCalendarAlt } from "react-icons/fa";
 
 interface ExperienceItemProps {
   company: string;
@@ -18,24 +18,33 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
   icon,
 }) => {
   return (
-    <div className="relative pl-8 pb-12 border-l-2 border-primary-200 last:border-l-0">
-      <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary-500 border-2 border-white"></div>
-      <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-        <div className="flex items-center mb-4">
-          <div className="mr-4 text-2xl text-primary-600">{icon}</div>
+    <div className="relative pl-10 pb-14 last:pb-0">
+      {/* Timeline line */}
+      <div
+        className="absolute left-0 top-2 bottom-0 w-px last:hidden"
+        style={{ background: "linear-gradient(to bottom, #0d9488, transparent)" }}
+      />
+      {/* Timeline dot */}
+      <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-primary-600 border-2 border-white shadow-sm" />
+
+      <div className="bg-white rounded-2xl border border-gray-100 p-7 hover:border-primary-200 hover:shadow-sm transition-all duration-200">
+        <div className="flex items-start gap-4 mb-5">
+          <div className="mt-0.5 flex-shrink-0">{icon}</div>
           <div>
-            <h3 className="text-xl font-bold text-gray-800">{company}</h3>
-            <div className="flex items-center text-gray-600 text-sm mt-1">
-              <FaCalendarAlt className="mr-2" />
+            <h3 className="text-xl font-bold" style={{ color: "#0c1a14" }}>{company}</h3>
+            <p className="font-medium text-primary-700 mt-0.5">{position}</p>
+            <div className="flex items-center gap-1.5 text-sm mt-1" style={{ color: "#64748b" }}>
+              <FaCalendarAlt className="text-xs" />
               <span>{period}</span>
             </div>
           </div>
         </div>
-        <h4 className="font-medium mb-4 text-gray-700">{position}</h4>
+
         <ul className="space-y-3">
-          {achievements.map((achievement, index) => (
-            <li key={index} className="text-gray-600 leading-relaxed">
-              {achievement}
+          {achievements.map((ach, i) => (
+            <li key={i} className="flex gap-3 leading-relaxed" style={{ color: "#334155" }}>
+              <span className="text-primary-500 mt-1.5 text-[10px] flex-shrink-0">●</span>
+              <span>{ach}</span>
             </li>
           ))}
         </ul>
@@ -51,17 +60,12 @@ const Experience: React.FC = () => {
       position: "Technical Lead, Senior Software Engineer",
       period: "Oct 2023 – Present",
       icon: (
-        <div className="w-8 h-8 relative">
-          <Image
-            src="/images/floworks.svg"
-            alt="Floworks Logo"
-            fill
-            style={{ objectFit: "contain" }}
-          />
+        <div className="w-9 h-9 relative">
+          <Image src="/images/floworks.svg" alt="Floworks Logo" fill style={{ objectFit: "contain" }} />
         </div>
       ),
       achievements: [
-        "Built and scaled Alisha, an AI-powered sales outreach platform that helps businesses connect with potential customers. It uses advanced AI to understand customer needs and personalize communication.",
+        "Built and scaled Alisha, an AI-powered sales outreach platform that helps businesses connect with potential customers using advanced AI to understand and personalize communication.",
         "Worked closely with our engineering director to plan our technical roadmap and helped build a talented team of 7 engineers across different specialties.",
       ],
     },
@@ -70,45 +74,31 @@ const Experience: React.FC = () => {
       position: "Sr. Technical Lead / Tech PM / Full-stack Engineer",
       period: "Jul 2019 – Oct 2023",
       icon: (
-        <div className="w-8 h-8 relative">
-          <Image
-            src="/images/microland.svg"
-            alt="Microland Logo"
-            fill
-            style={{ objectFit: "contain" }}
-          />
+        <div className="w-9 h-9 relative">
+          <Image src="/images/microland.svg" alt="Microland Logo" fill style={{ objectFit: "contain" }} />
         </div>
       ),
       achievements: [
-        "Built develop Zeus Cloud Defender, a tool that helps businesses keep their cloud resources secure by visualizing and monitoring their assets.",
+        "Built Zeus Cloud Defender, a tool that helps businesses keep their cloud resources secure by visualizing and monitoring their assets.",
         "Led the successful deployment of 10+ 5G telecommunications projects across various cloud platforms, helping companies modernize their infrastructure.",
-        "Built Zeus, a user-friendly tool that helps IT teams manage their infrastructure using low-code no-code tool, allowing them to meet customer needs 55% faster.",
-        "I'm proud to have received recognition from our CEO for building MicroVax—a platform that helped vaccinate over 4,000 employees during the COVID-19 pandemic in just 3 weeks.",
+        "Built Zeus, a user-friendly low-code/no-code tool that helps IT teams manage their infrastructure, allowing them to meet customer needs 55% faster.",
+        "Received recognition from our CEO for building MicroVax — a platform that helped vaccinate over 4,000 employees during COVID-19 in just 3 weeks.",
       ],
     },
   ];
 
   return (
-    <section id="experience" className="py-16 bg-gray-50">
+    <section id="experience" className="py-20" style={{ background: "#f0fdfa" }}>
       <div className="container-section">
-        <h2 className="section-title flex items-center">
-          <FaBriefcase className="mr-3 text-primary-600" />
-          My Journey
-        </h2>
-        <p className="text-gray-600 mb-8 max-w-3xl">
-          Here&apos;s a look at my professional journey and some of the exciting
-          projects I&apos;ve worked on along the way.
+        <p className="section-eyebrow">Career</p>
+        <h2 className="section-title">My journey so far.</h2>
+        <p className="mb-12 max-w-2xl" style={{ color: "#64748b" }}>
+          A look at my professional journey and some of the exciting problems
+          I&apos;ve worked on along the way.
         </p>
-        <div className="relative pl-4">
-          {experiences.map((exp, index) => (
-            <ExperienceItem
-              key={index}
-              company={exp.company}
-              position={exp.position}
-              period={exp.period}
-              achievements={exp.achievements}
-              icon={exp.icon}
-            />
+        <div className="relative pl-4 max-w-3xl">
+          {experiences.map((exp, i) => (
+            <ExperienceItem key={i} {...exp} />
           ))}
         </div>
       </div>
