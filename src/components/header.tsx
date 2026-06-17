@@ -31,6 +31,9 @@ const Header: React.FC = () => {
             <a href="#interests" className="hover:text-primary-600 font-medium">
               Interests
             </a>
+            <a href="/research" className="hover:text-primary-600 font-medium">
+              AI Research
+            </a>
             <a href="#contact" className="btn-primary">
               Contact
             </a>
@@ -86,6 +89,13 @@ const Header: React.FC = () => {
               className="block px-3 py-2 rounded hover:bg-gray-100"
             >
               Interests
+            </a>
+            <a
+              href="/research"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 rounded hover:bg-gray-100"
+            >
+              AI Research
             </a>
             <a
               href="#contact"
