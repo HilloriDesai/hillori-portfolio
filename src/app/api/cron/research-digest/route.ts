@@ -92,10 +92,11 @@ export async function GET(req: Request) {
       published: rows.length,
       titles: rows.map((r) => r.title),
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('research-digest cron failed:', err);
+    const message = err instanceof Error ? err.message : 'unknown error';
     return NextResponse.json(
-      { ok: false, error: err?.message ?? 'unknown error' },
+      { ok: false, error: message },
       { status: 500 },
     );
   }

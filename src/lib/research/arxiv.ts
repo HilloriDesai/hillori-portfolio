@@ -6,6 +6,32 @@ import {
   RELEVANCE_KEYWORDS,
 } from './sources';
 
+interface ArxivLink {
+  '@_title'?: string;
+  '@_rel'?: string;
+  '@_href'?: string;
+}
+
+interface ArxivAuthor {
+  name?: string;
+}
+
+interface ArxivCategory {
+  '@_term'?: string;
+}
+
+interface ArxivEntry {
+  id?: string;
+  link?: ArxivLink | ArxivLink[];
+  author?: ArxivAuthor | ArxivAuthor[];
+  'arxiv:primary_category'?: { '@_term'?: string };
+  category?: ArxivCategory | ArxivCategory[];
+  title?: string;
+  summary?: string;
+  published?: string;
+  updated?: string;
+}
+
 const ARXIV_ENDPOINT = 'https://export.arxiv.org/api/query';
 
 const parser = new XMLParser({
@@ -46,7 +72,7 @@ export async function fetchArxivCandidates(): Promise<Candidate[]> {
   return entries.map(parseEntry).filter(Boolean) as Candidate[];
 }
 
-function parseEntry(entry: any): Candidate | null {
+function parseEntry(entry: ArxivEntry): Candidate | null {
   try {
     const rawId: string = entry.id || '';
     // rawId looks like "http://arxiv.org/abs/2506.07626v1"
@@ -55,11 +81,11 @@ function parseEntry(entry: any): Candidate | null {
     if (!arxivId) return null;
 
     const links = asArray(entry.link);
-    const pdfLink = links.find((l: any) => l['@_title'] === 'pdf');
-    const absLink = links.find((l: any) => l['@_rel'] === 'alternate');
+    const pdfLink = links.find((l) => l['@_title'] === 'pdf');
+    const absLink = links.find((l) => l['@_rel'] === 'alternate');
 
     const authors = asArray(entry.author)
-      .map((a: any) => clean(a?.name))
+      .map((a) => clean(a?.name ?? ''))
       .filter(Boolean);
 
     const primaryCategory =
@@ -69,9 +95,9 @@ function parseEntry(entry: any): Candidate | null {
 
     return {
       arxivId,
-      title: clean(entry.title),
+      title: clean(entry.title ?? ''),
       authors,
-      abstract: clean(entry.summary),
+      abstract: clean(entry.summary ?? ''),
       publishedAt: entry.published || entry.updated || new Date().toISOString(),
       primaryCategory,
       absUrl: absLink?.['@_href'] || `https://arxiv.org/abs/${arxivId}`,

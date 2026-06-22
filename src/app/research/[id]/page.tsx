@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { getReadClient } from '@/lib/research/supabase';
 import type { ResearchRow } from '@/lib/research/types';
 import PaperCard from '../_components/PaperCard';
@@ -46,9 +47,9 @@ export default async function ResearchItemPage({
 
   return (
     <main className={styles.page}>
-      <a className={styles.back} href="/research">
+      <Link className={styles.back} href="/research">
         ← All research
-      </a>
+      </Link>
       {item.one_line && (
         <header className={styles.masthead}>
           <p className={styles.eyebrow}>AI for Learning</p>
