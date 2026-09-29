@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Link from "next/link";
 import { MenuIcon, XIcon } from "./icons";
 
 const navLinks = [
@@ -35,13 +34,6 @@ const Header: React.FC = () => {
                 {l.label}
               </a>
             ))}
-            <Link
-              href="/research"
-              className="text-sm font-medium transition-colors duration-150"
-              style={{ color: "#5eead4" }}
-            >
-              AI Research
-            </Link>
             <a href="#contact" className="btn-primary text-sm">
               Contact
             </a>
@@ -74,14 +66,6 @@ const Header: React.FC = () => {
                 {l.label}
               </a>
             ))}
-            <Link
-              href="/research"
-              onClick={() => setOpen(false)}
-              className="block px-3 py-2.5 rounded-lg text-sm font-medium"
-              style={{ color: "#5eead4" }}
-            >
-              AI Research
-            </Link>
             <div className="pt-2">
               <a href="#contact" onClick={() => setOpen(false)} className="btn-primary block text-center text-sm">
                 Contact

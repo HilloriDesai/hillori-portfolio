@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { GitHubIcon, LinkedinIcon, MailIcon } from "./icons";
 
@@ -18,9 +17,7 @@ const Hero: React.FC = () => {
               className="text-6xl sm:text-7xl font-bold text-white leading-[1.0] mb-6 animate-slide-up"
               style={{ animationDelay: "0.1s", color: "#ffffff" }}
             >
-              Hillori
-              <br />
-              Desai.
+              Hillori.
             </h1>
             <p
               className="text-lg text-primary-200/70 mb-4 animate-slide-up"
@@ -32,10 +29,10 @@ const Hero: React.FC = () => {
               className="text-slate-400 max-w-lg leading-relaxed mb-10 animate-slide-up"
               style={{ animationDelay: "0.3s" }}
             >
-              My mission is to create products and ecosystems that restore
-              dignity, equality and quality of life for millions. I work with
-              first-principles thinking, a hands-on spirit, and a deep belief
-              that persistence and empathy can drive real, lasting change.
+              My mission is to build products that change how millions of
+              people learn, work and live. I get there with first-principles
+              thinking, a hands-on spirit, and a belief that persistence and
+              empathy drive real, lasting change.
             </p>
             <div
               className="flex flex-wrap gap-3 mb-10 animate-slide-up"
@@ -44,12 +41,6 @@ const Hero: React.FC = () => {
               <a href="#contact" className="btn-primary">
                 Let&apos;s connect
               </a>
-              <Link
-                href="/research"
-                className="border border-primary-700 text-primary-300 px-5 py-2.5 rounded-lg font-medium hover:bg-primary-900/40 transition-colors duration-200"
-              >
-                AI Research →
-              </Link>
             </div>
             <div
               className="flex gap-5 animate-fade-in"
@@ -75,7 +66,7 @@ const Hero: React.FC = () => {
             >
               <Image
                 src="/images/profile1.jpeg"
-                alt="Hillori Desai Awasthi"
+                alt="Hillori"
                 fill
                 className="object-cover scale-150"
                 priority

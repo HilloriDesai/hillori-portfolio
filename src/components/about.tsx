@@ -2,30 +2,43 @@ import React from "react";
 
 const skillGroups = [
   {
-    label: "Languages",
-    items: ["TypeScript", "JavaScript", "Python", "SQL", "C++"],
-  },
-  {
-    label: "Frameworks",
-    items: ["React", "Next.js", "Node.js", "Express", "Django"],
-  },
-  {
     label: "AI / LLMs",
-    items: ["RAG", "Prompt Engineering", "OpenAI", "Anthropic"],
+    items: ["RAG", "Prompt engineering", "LLM evals", "OpenAI", "Gemini", "Anthropic", "Weaviate", "Speech-to-text & text-to-speech"],
   },
   {
-    label: "Infrastructure",
-    items: ["Docker", "Kubernetes", "AWS", "GCP", "Terraform"],
+    label: "Payments",
+    items: ["Payment gateways", "UPI Autopay", "Webhook reconciliation", "Refunds & disputes", "GST invoicing"],
   },
   {
-    label: "Databases",
-    items: ["PostgreSQL", "MongoDB", "ClickHouse", "Redis"],
+    label: "Growth",
+    items: ["Event instrumentation", "Funnel analysis", "A/B experiments", "Retention & pricing experiments", "MoEngage"],
   },
   {
-    label: "Observability",
-    items: ["Grafana", "Prometheus", "Loki"],
+    label: "Frontend",
+    items: ["React", "Next.js", "Redux", "TanStack Query", "Zustand", "Tailwind CSS"],
+  },
+  {
+    label: "Mobile",
+    items: ["React Native", "Expo", "Native Android modules", "Firebase Cloud Messaging"],
+  },
+  {
+    label: "Backend",
+    items: ["Node.js", "Express", "Django", "REST APIs", "Event-driven architecture"],
+  },
+  {
+    label: "Languages",
+    items: ["TypeScript", "JavaScript", "Python", "SQL", "C++", "Bash"],
+  },
+  {
+    label: "Data",
+    items: ["PostgreSQL", "MongoDB", "Redis", "ClickHouse", "Drizzle", "Prisma", "Hasura", "Dagster", "Metabase"],
+  },
+  {
+    label: "Infrastructure & observability",
+    items: ["Docker", "Kubernetes", "Terraform", "AWS", "GCP", "Azure", "BullMQ", "RabbitMQ", "Sentry", "Axiom", "Grafana", "Prometheus", "Loki"],
   },
 ];
+
 
 const About: React.FC = () => {
   return (
@@ -35,22 +48,22 @@ const About: React.FC = () => {
         {/* Bio */}
         <div className="max-w-2xl">
           <p className="section-eyebrow">About me</p>
-          <h2 className="section-title">I build things that matter.</h2>
+          <h2 className="section-title">I build for the people on the other side of the screen.</h2>
           <div className="space-y-4 text-lg leading-relaxed" style={{ color: "#334155" }}>
             <p>
-              I am a passionate software engineer with a love for building
-              scalable applications and AI-driven solutions.
+              What I care about most is simple: whether what I build makes
+              someone&apos;s day a little easier. I&apos;ve built for learners,
+              sales teams, IT teams and my own colleagues, and that question
+              has guided all of it.
             </p>
             <p>
-              With hands-on experience across frontend, backend, distributed
-              systems, and artificial intelligence, I enjoy bringing ideas to
-              life by solving complex problems with thoughtful, user-centered
-              design.
+              I work across the whole stack — AI, payments, mobile, growth —
+              because users don&apos;t experience a product in layers. I&apos;d
+              rather own a problem end to end than hand it off halfway.
             </p>
             <p>
-              Beyond code, I&apos;m an explorer — constantly learning, growing, and
-              creating. You&apos;ll often find me reading thought-provoking books,
-              sharing knowledge through my YouTube channel, or discovering new
+              Beyond work, I&apos;m an explorer — reading thought-provoking
+              books, making videos for my YouTube channel, or finding new
               corners of the world.
             </p>
           </div>

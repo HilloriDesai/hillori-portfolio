@@ -5,41 +5,62 @@ interface Project {
   description: string;
   technologies: string[];
   badge: string;
-  link: string;
+  stores?: { label: string; href: string }[];
 }
 
 const projects: Project[] = [
   {
-    title: "Alisha — AI Sales Agent",
+    title: "Supernova — AI Spoken English",
     description:
-      "Agentic AI-powered sales outreach platform with LLM integration and semantic document processing. Helps businesses connect with potential customers through personalized, intelligent communication.",
-    technologies: ["TypeScript", "Next.js", "Node.js", "Weaviate", "OpenAI", "Anthropic"],
-    badge: "B2B AI SaaS",
-    link: "https://console.floworks.ai/",
+      "The #1 Education app on India's App Store, where 2 million learners a day practise real conversations with Nova, an AI tutor. I build across the whole learner journey — courses, the AI tutor, speech, payments and retention.",
+    technologies: ["React Native", "Node.js", "LLMs", "Speech AI", "Payments"],
+    badge: "2M daily learners",
+    stores: [
+      { label: "App Store", href: "https://apps.apple.com/in/app/supernova-ai-spoken-english/id6447939054" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=live.gosupernova.app" },
+    ],
   },
   {
-    title: "ThorV2 — LLM Orchestration",
+    title: "Superflow — AI Voice to Text",
     description:
-      "A scalable LLM orchestration layer for multi-API workflows with enhanced reliability, accuracy, and cost efficiency. Benchmarked against GPT-4 and Claude on HubSpot CRM operations.",
-    technologies: ["Python", "LLMs", "RAG", "Benchmarking"],
-    badge: "Published Research",
-    link: "https://arxiv.org/html/2410.17950v1",
+      "Speak, and get clean text anywhere on your phone, with an always-on translation widget. I built the personalised dictionary that spells each person's names right, and made the widget bring itself back when the phone shuts it down.",
+    technologies: ["React Native", "Expo UI", "Native Android", "Firebase Cloud Messaging", "Speech-to-text"],
+    badge: "Voice AI",
+    stores: [
+      { label: "App Store", href: "https://apps.apple.com/in/app/ai-voice-to-text-superflow/id6782897323" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=ai.getsupernova.superflow" },
+    ],
+  },
+  {
+    title: "SuperPrep — AI Exam Prep",
+    description:
+      "NEET exam preparation built on NCERT notes. I shipped Ask AI, which answers students' questions grounded in their own study material.",
+    technologies: ["RAG", "LLMs", "Document grounding"],
+    badge: "EdTech AI",
+    stores: [
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=ai.superprep.app" },
+    ],
+  },
+  {
+    title: "Alisha — AI Sales Agent",
+    description:
+      "Sales teams hand off outreach to an AI agent that answers from their own documents, writes to prospects and follows up on its own — more than 10,000 workflows a day. I built it from zero as technical lead at Floworks.",
+    technologies: ["TypeScript", "Next.js", "Node.js", "Weaviate", "OpenAI", "Anthropic"],
+    badge: "B2B AI SaaS",
   },
   {
     title: "Zeus Cloud Defender",
     description:
-      "Cloud security posture management tool with dynamic asset graphing and real-time threat mitigation across GCP, AWS, and Azure.",
+      "Businesses see every cloud asset across AWS, GCP and Azure in one live map, with audit trails, so security risks are spotted and dealt with as they happen. I co-led the product at Microland.",
     technologies: ["React", "Microservices", "Cloud Security", "GCP / AWS / Azure"],
     badge: "Enterprise Product",
-    link: "",
   },
   {
     title: "MicroVax",
     description:
-      "COVID-19 internal vaccination platform built in under 3 weeks, supporting 4,000+ employees. Recognised by CEO for speed and impact.",
+      "During COVID-19, more than 4,000 Microland employees got vaccinated through a platform we built and launched in under three weeks — recognised by our CEO.",
     technologies: ["React", "Python", "PostgreSQL", "Auth"],
     badge: "CEO Recognition",
-    link: "https://www.microland.com/pr/microvax-for-covid19",
   },
 ];
 
@@ -69,16 +90,19 @@ const ProjectCard: React.FC<{ project: Project; featured?: boolean }> = ({ proje
         </div>
       </div>
     </div>
-    {project.link && (
-      <div className="px-7 py-4 border-t border-gray-50">
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary-700 hover:text-primary-900 transition-colors duration-150"
-        >
-          View project <ExternalLinkIcon />
-        </a>
+    {project.stores && (
+      <div className="px-7 py-4 border-t border-gray-50 flex flex-wrap gap-5">
+        {project.stores.map((s) => (
+          <a
+            key={s.label}
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary-700 hover:text-primary-900 transition-colors duration-150"
+          >
+            {s.label} <ExternalLinkIcon />
+          </a>
+        ))}
       </div>
     )}
   </div>
@@ -91,7 +115,7 @@ const Projects: React.FC = () => (
       <h2 className="section-title">Featured projects.</h2>
       <div className="grid md:grid-cols-2 gap-5">
         {projects.map((p, i) => (
-          <ProjectCard key={p.title} project={p} featured={i === 0} />
+          <ProjectCard key={p.title} project={p} featured={i === 0 || (i === projects.length - 1 && i % 2 === 1)} />
         ))}
       </div>
     </div>

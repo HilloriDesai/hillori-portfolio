@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
         </div>
 
         <p className="mt-10 text-sm" style={{ color: "#64748b" }}>
-          Bangalore, India · hilloridesai@gmail.com
+          Dubai, UAE · hilloridesai@gmail.com
         </p>
       </div>
     </section>

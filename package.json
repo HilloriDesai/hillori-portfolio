@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@supabase/supabase-js": "^2.108.2",
     "@tailwindcss/postcss": "^4.1.4",
     "fast-xml-parser": "^5.9.0",
     "next": "^15.5.19",

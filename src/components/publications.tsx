@@ -17,8 +17,8 @@ const Publications: React.FC = () => {
               Framework for Enhanced LLM Function Calling
             </h3>
             <p className="leading-relaxed mb-6" style={{ color: "#475569" }}>
-              Built ThorV2, a scalable LLM orchestration layer that outperforms
-              standalone GPT-4 and Claude on multi-API workflows in terms of
+              Introduces ThorV2, a scalable LLM orchestration layer that
+              outperforms standalone GPT-4 and Claude on multi-API workflows in terms of
               reliability, accuracy, latency, and cost. Benchmarked on HubSpot
               CRM operations — shows potential to enable powerful assistants
               with smaller models.

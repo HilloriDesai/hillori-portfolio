@@ -7,20 +7,16 @@ import {
   FaHeart,
 } from "react-icons/fa";
 
-interface TravelLocation {
-  city: string;
-  country: string;
-  coordinates: [number, number];
-  year: string;
-}
-
-const travelLocations: TravelLocation[] = [
-  { city: "Western Karnataka", country: "India", coordinates: [13.3409, 74.7421], year: "2024" },
-  { city: "Kerala", country: "India", coordinates: [10.1632, 76.6413], year: "2023" },
-  { city: "Bali", country: "Indonesia", coordinates: [8.4095, -115.1889], year: "2023" },
-  { city: "Bastar", country: "India", coordinates: [19.1071, 81.9535], year: "2022" },
-  { city: "Kashmir", country: "India", coordinates: [33.2778, -75.3412], year: "2016" },
-  { city: "Andaman & Nicobar", country: "India", coordinates: [10.7449, 92.5], year: "2007" },
+const travelLocations = [
+  "Hong Kong",
+  "Shanghai",
+  "Sri Lanka",
+  "Bali",
+  "Western Karnataka",
+  "Kerala",
+  "Bastar",
+  "Kashmir",
+  "Andaman & Nicobar",
 ];
 
 const InterestCard: React.FC<{
@@ -97,9 +93,9 @@ const Interests: React.FC = () => {
               Here are some of the places I have visited:
             </p>
             <div className="flex flex-wrap gap-2">
-              {travelLocations.map((location, index) => (
-                <span key={index} className="technology-badge">
-                  {location.city}
+              {travelLocations.map((place) => (
+                <span key={place} className="technology-badge">
+                  {place}
                 </span>
               ))}
             </div>
