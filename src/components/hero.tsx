@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
 
           {/* Text */}
           <div className="flex-1">
-            <p className="font-hand text-2xl text-primary-600 mb-1 animate-fade-in">
+            <p className="font-hand text-3xl text-primary-600 mb-1 animate-fade-in">
               hi there, I&apos;m
             </p>
             <h1
@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
                   priority
                 />
               </div>
-              <p className="absolute bottom-3 left-0 right-0 text-center font-hand text-xl text-bark whitespace-nowrap">
+              <p className="absolute bottom-3 left-0 right-0 text-center font-hand text-2xl text-bark whitespace-nowrap">
                 dinner in the sky ✦
               </p>
             </div>
@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
         {/* Trail cue */}
         <a
           href="#about"
-          className="hidden md:flex items-center gap-2 absolute left-1/2 -translate-x-1/2 bottom-6 font-hand text-xl text-clay hover:text-primary-600 transition-colors"
+          className="hidden md:flex items-center gap-2 absolute left-1/2 -translate-x-1/2 bottom-6 font-hand text-2xl text-clay hover:text-primary-600 transition-colors"
         >
           follow the trail
           <svg viewBox="0 0 24 40" className="w-4 h-7" aria-hidden="true">

@@ -147,7 +147,7 @@ const SupernovaJourney: React.FC = () => {
 
             <div className="pt-1.5 mb-3">
               <h4 className="text-xl font-bold leading-tight" style={{ color: "#2b2118" }}>{s.label}</h4>
-              <p className="font-hand text-lg text-clay leading-tight">{s.tagline}</p>
+              <p className="font-hand text-xl text-clay leading-tight">{s.tagline}</p>
             </div>
 
             <ImpactList items={s.items} />

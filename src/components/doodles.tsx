@@ -37,7 +37,7 @@ export const Compass: React.FC<DoodleProps> = ({ className = "", color = "#2b211
     <path d="M8 50 L50 43 L92 50 L50 57 Z" fill="#d9a441" stroke={color} strokeWidth="1.2" />
     <path d="M50 8 L57 50 L50 50 Z" fill="#8c401b" />
     <circle cx="50" cy="50" r="4" fill="#fffbf3" stroke={color} strokeWidth="1.2" />
-    <text x="50" y="6" textAnchor="middle" fontSize="9" fontFamily="Fraunces, serif" fontWeight="700" fill={color}>N</text>
+    <text x="50" y="6" textAnchor="middle" fontSize="9" fontWeight="700" style={{ fontFamily: "var(--font-display)" }} fill={color}>N</text>
   </svg>
 );
 
