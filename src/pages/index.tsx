@@ -32,7 +32,7 @@ const PERSON_SCHEMA = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ background: "#f8fffe" }}>
+    <div className="min-h-screen" style={{ background: "#f6f0e4" }}>
       <Head>
         <title>{SITE_TITLE}</title>
         <meta name="description" content={SITE_DESCRIPTION} />

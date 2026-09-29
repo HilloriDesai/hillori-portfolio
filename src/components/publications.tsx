@@ -2,7 +2,7 @@ import { ExternalLinkIcon } from "./icons";
 
 const Publications: React.FC = () => {
   return (
-    <section id="publications" className="py-20" style={{ background: "#f0fdfa" }}>
+    <section id="publications" className="py-20" style={{ background: "#ede3d0" }}>
       <div className="container-section">
         <p className="section-eyebrow">Research</p>
         <h2 className="section-title">Publications.</h2>
@@ -12,11 +12,11 @@ const Publications: React.FC = () => {
             <p className="text-xs font-mono uppercase tracking-widest text-primary-600 mb-3">
               Co-author · 2024
             </p>
-            <h3 className="text-2xl font-bold mb-4 leading-snug" style={{ color: "#0c1a14" }}>
+            <h3 className="text-2xl font-bold mb-4 leading-snug" style={{ color: "#2b2118" }}>
               Benchmarking Floworks against OpenAI & Anthropic: A Novel
               Framework for Enhanced LLM Function Calling
             </h3>
-            <p className="leading-relaxed mb-6" style={{ color: "#475569" }}>
+            <p className="leading-relaxed mb-6" style={{ color: "#6b5b4b" }}>
               Introduces ThorV2, a scalable LLM orchestration layer that
               outperforms standalone GPT-4 and Claude on multi-API workflows in terms of
               reliability, accuracy, latency, and cost. Benchmarked on HubSpot

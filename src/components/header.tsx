@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MenuIcon, XIcon } from "./icons";
+import { Pin } from "./doodles";
 
 const navLinks = [
   { label: "About",        href: "#about" },
@@ -14,11 +15,16 @@ const Header: React.FC = () => {
 
   return (
     <nav
-      className="fixed w-full z-10 border-b border-white/8 backdrop-blur-sm"
-      style={{ background: "rgba(13, 31, 26, 0.95)" }}
+      className="fixed w-full z-10 border-b border-gray-100 backdrop-blur-sm"
+      style={{ background: "rgba(246, 240, 228, 0.9)" }}
     >
       <div className="container-section">
         <div className="flex justify-between h-16 items-center">
+
+          <a href="#" className="flex items-center gap-1.5 text-2xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#2b2118" }}>
+            <Pin className="w-4 h-5" />
+            Hillori.
+          </a>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-7">
@@ -27,9 +33,9 @@ const Header: React.FC = () => {
                 key={l.href}
                 href={l.href}
                 className="text-sm font-medium transition-colors duration-150"
-                style={{ color: "#94a3b8" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#2dd4bf")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#94a3b8")}
+                style={{ color: "#6b5b4b" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#c4622d")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#6b5b4b")}
               >
                 {l.label}
               </a>
@@ -41,7 +47,7 @@ const Header: React.FC = () => {
 
           {/* Mobile toggle */}
           <div className="md:hidden flex items-center ml-auto">
-            <button onClick={() => setOpen(!open)} className="p-2" style={{ color: "#94a3b8" }}>
+            <button onClick={() => setOpen(!open)} className="p-2" style={{ color: "#6b5b4b" }}>
               {open ? <XIcon /> : <MenuIcon />}
             </button>
           </div>
@@ -51,8 +57,8 @@ const Header: React.FC = () => {
       {/* Mobile menu */}
       {open && (
         <div
-          className="md:hidden border-t border-white/8"
-          style={{ background: "rgba(13, 31, 26, 0.98)" }}
+          className="md:hidden border-t border-gray-100"
+          style={{ background: "rgba(246, 240, 228, 0.98)" }}
         >
           <div className="px-4 py-4 flex flex-col gap-1">
             {navLinks.map((l) => (
@@ -61,7 +67,7 @@ const Header: React.FC = () => {
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-150"
-                style={{ color: "#94a3b8" }}
+                style={{ color: "#6b5b4b" }}
               >
                 {l.label}
               </a>

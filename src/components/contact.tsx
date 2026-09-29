@@ -2,15 +2,15 @@ import { MailIcon, LinkedinIcon } from "./icons";
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24" style={{ background: "#0d1f1a" }}>
+    <section id="contact" className="py-24" style={{ background: "#2f3a2b" }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="font-mono text-primary-400 text-xs tracking-widest uppercase mb-4">
           Get in touch
         </p>
-        <h2 className="text-4xl font-bold text-white mb-5" style={{ color: "#ffffff" }}>
+        <h2 className="text-4xl font-bold text-white mb-5" style={{ color: "#fffbf3" }}>
           Let&apos;s build something together.
         </h2>
-        <p className="text-lg mb-10 leading-relaxed" style={{ color: "#94a3b8" }}>
+        <p className="text-lg mb-10 leading-relaxed" style={{ color: "#c9b8a2" }}>
           I&apos;m open to new opportunities and collaborations — whether it&apos;s a
           product idea, a research problem, or just a conversation. Reach out
           and let&apos;s talk.
@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
           </a>
         </div>
 
-        <p className="mt-10 text-sm" style={{ color: "#64748b" }}>
+        <p className="mt-10 text-sm" style={{ color: "#7a6857" }}>
           Dubai, UAE · hilloridesai@gmail.com
         </p>
       </div>

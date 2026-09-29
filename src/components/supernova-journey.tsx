@@ -115,10 +115,12 @@ const steps: JourneyStep[] = [
   },
 ];
 
+const STEP_COLORS = ["#c4622d", "#4f6b3a", "#5b8a8c", "#d9a441"];
+
 const SupernovaJourney: React.FC = () => {
   return (
     <div>
-      <p className="leading-relaxed mb-6" style={{ color: "#334155" }}>
+      <p className="leading-relaxed mb-6" style={{ color: "#4a3b2e" }}>
         Supernova is an AI spoken-English app — the #1 Education app on
         India&apos;s App Store. With a tech team of four engineers and a CTO
         serving 2 million learners a day, I own whole stretches of their
@@ -134,15 +136,18 @@ const SupernovaJourney: React.FC = () => {
           <li key={s.key} className="relative pl-14 pb-8 last:pb-0">
             {/* Line joining this step to the next */}
             {i < steps.length - 1 && (
-              <div className="absolute left-5 top-10 bottom-0 w-px bg-primary-200" aria-hidden="true" />
+              <div className="absolute left-5 top-11 bottom-1 border-l-2 border-dotted border-clay/40" aria-hidden="true" />
             )}
-            <span className="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold bg-primary-600 text-white">
+            <span
+              className="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center text-base font-bold text-cream border-2 border-ink"
+              style={{ background: STEP_COLORS[i % STEP_COLORS.length], boxShadow: "2px 2px 0 #2b2118", fontFamily: "var(--font-display)" }}
+            >
               {i + 1}
             </span>
 
             <div className="pt-1.5 mb-3">
-              <h4 className="text-lg font-bold leading-tight" style={{ color: "#0c1a14" }}>{s.label}</h4>
-              <p className="text-sm mt-0.5" style={{ color: "#64748b" }}>{s.tagline}</p>
+              <h4 className="text-xl font-bold leading-tight" style={{ color: "#2b2118" }}>{s.label}</h4>
+              <p className="font-hand text-lg text-clay leading-tight">{s.tagline}</p>
             </div>
 
             <ImpactList items={s.items} />

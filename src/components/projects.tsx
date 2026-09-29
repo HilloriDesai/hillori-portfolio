@@ -73,14 +73,14 @@ const ProjectCard: React.FC<{ project: Project; featured?: boolean }> = ({ proje
     <div className={`p-7 flex-1 ${featured ? "md:flex md:gap-10 md:items-start" : ""}`}>
       <div className="flex-1">
         <div className="flex items-start justify-between gap-4 mb-3">
-          <h3 className="text-xl font-bold leading-snug" style={{ color: "#0c1a14" }}>
+          <h3 className="text-xl font-bold leading-snug" style={{ color: "#2b2118" }}>
             {project.title}
           </h3>
           <span className="flex-shrink-0 text-xs font-medium bg-primary-50 text-primary-700 border border-primary-100 px-2.5 py-1 rounded-full">
             {project.badge}
           </span>
         </div>
-        <p className={`leading-relaxed mb-5 ${featured ? "text-base" : "text-sm"}`} style={{ color: "#475569" }}>
+        <p className={`leading-relaxed mb-5 ${featured ? "text-base" : "text-sm"}`} style={{ color: "#6b5b4b" }}>
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2">

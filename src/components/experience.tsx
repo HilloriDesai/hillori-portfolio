@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { FaCalendarAlt } from "react-icons/fa";
 import SupernovaJourney from "./supernova-journey";
+import { Mountains, Pin } from "./doodles";
 import { RoleStory } from "./impact";
 
 interface ExperienceItemProps {
@@ -22,20 +23,17 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
   icon,
 }) => {
   return (
-    <div className="relative pl-10 pb-14 last:pb-0">
-      {/* Timeline line */}
-      <div
-        className="absolute left-0 top-2 bottom-0 w-px last:hidden"
-        style={{ background: "linear-gradient(to bottom, #0d9488, transparent)" }}
-      />
-      {/* Timeline dot */}
-      <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-primary-600 border-2 border-white shadow-sm" />
+    <div className="group relative pl-10 pb-14 last:pb-0">
+      {/* Dashed trail between stops */}
+      <div className="absolute left-[3px] top-10 bottom-0 border-l-2 border-dashed border-primary-300 group-last:hidden" />
+      {/* Map pin for this stop */}
+      <Pin className="absolute -left-[9px] top-0 w-6 h-8" />
 
-      <div className="bg-white rounded-2xl border border-gray-100 p-7 hover:border-primary-200 hover:shadow-sm transition-all duration-200">
+      <div className="paper-card p-7">
         <div className="flex items-start gap-4 mb-5">
           <div className="mt-0.5 flex-shrink-0">{icon}</div>
           <div>
-            <h3 className="text-xl font-bold" style={{ color: "#0c1a14" }}>
+            <h3 className="text-2xl font-bold" style={{ color: "#2b2118" }}>
               <a
                 href={url}
                 target="_blank"
@@ -46,7 +44,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
               </a>
             </h3>
             <p className="font-medium text-primary-700 mt-0.5">{position}</p>
-            <div className="flex items-center gap-1.5 text-sm mt-1" style={{ color: "#64748b" }}>
+            <div className="flex items-center gap-1.5 text-sm mt-1" style={{ color: "#7a6857" }}>
               <FaCalendarAlt className="text-xs" />
               <span>{period}</span>
             </div>
@@ -157,11 +155,13 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="py-20" style={{ background: "#f0fdfa" }}>
-      <div className="container-section">
-        <p className="section-eyebrow">Career</p>
+    <section id="experience" className="relative py-20 overflow-hidden" style={{ background: "#ede3d0" }}>
+      <div className="absolute inset-0 topo-light pointer-events-none" />
+      <div className="container-section relative">
+        <Mountains className="hidden lg:block absolute right-8 top-0 w-40" />
+        <p className="section-eyebrow">where I&apos;ve been</p>
         <h2 className="section-title">The mission, in practice.</h2>
-        <p className="mb-12 max-w-2xl" style={{ color: "#64748b" }}>
+        <p className="mb-12 max-w-2xl" style={{ color: "#7a6857" }}>
           Where that mission has turned into real products — and what changed
           for the people who use them.
         </p>

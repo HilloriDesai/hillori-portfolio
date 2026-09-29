@@ -1,18 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..800,50..100&family=Inter:wght@400;500;600;700&family=Patrick+Hand&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* Forest Teal — exploration, discovery, science */
-  --color-primary-50:  #f0fdfa;
-  --color-primary-100: #ccfbf1;
-  --color-primary-200: #99f6e4;
-  --color-primary-300: #5eead4;
-  --color-primary-400: #2dd4bf;
-  --color-primary-500: #14b8a6;
-  --color-primary-600: #0d9488;
-  --color-primary-700: #0f766e;
-  --color-primary-800: #115e59;
-  --color-primary-900: #134e4a;
+  /* Explorer palette — sand, terracotta, olive, ochre, ink */
+
+  /* Terracotta: the main accent */
+  --color-primary-50:  #fbf1ea;
+  --color-primary-100: #f5dccb;
+  --color-primary-200: #ebbb9c;
+  --color-primary-300: #e09a6e;
+  --color-primary-400: #d47c4b;
+  --color-primary-500: #c4622d;
+  --color-primary-600: #a94f20;
+  --color-primary-700: #8c401b;
+  --color-primary-800: #6e3418;
+  --color-primary-900: #4f2612;
+
+  --color-sand:   #f6f0e4;  /* page background, like paper */
+  --color-dune:   #ede3d0;  /* alternate section background */
+  --color-cream:  #fffbf3;  /* cards */
+  --color-ink:    #2b2118;  /* headings */
+  --color-bark:   #4a3b2e;  /* body text */
+  --color-clay:   #7a6857;  /* muted text */
+  --color-olive:  #4f6b3a;
+  --color-forest: #2f3a2b;  /* dark sections */
+  --color-ochre:  #d9a441;
+  --color-rose:   #d98e73;
+  --color-sky:    #5b8a8c;
+
+  /* Warm the neutrals so nothing on the page reads cold grey */
+  --color-white:    #fffbf3;
+  --color-gray-50:  #f6efe2;
+  --color-gray-100: #eadfcc;
+  --color-gray-600: #6b5b4b;
+  --color-gray-800: #2b2118;
+  --color-stone-100: #eadfcc;
+  --color-slate-300: #e6dccb;
+  --color-slate-400: #c9b8a2;
+  --color-slate-500: #a8957f;
+  --color-slate-600: #6b5b4b;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-hand: "Patrick Hand", cursive;
 }
 
 @layer base {
@@ -20,16 +50,18 @@
     @apply scroll-smooth;
   }
   body {
-    background-color: #f8fffe;
-    color: #334155;
+    background-color: #f6f0e4;
+    color: #4a3b2e;
+    font-family: var(--font-sans);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    color: #0c1a14;
+    font-family: var(--font-display);
+    font-variation-settings: "SOFT" 100;
+    color: #2b2118;
   }
   p {
-    color: #334155;
+    color: #4a3b2e;
   }
 }
 
@@ -38,27 +70,38 @@
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   .section-eyebrow {
-    font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
-    @apply text-xs uppercase tracking-widest text-primary-600 mb-3;
+    font-family: var(--font-hand);
+    @apply text-xl text-primary-600 mb-1;
   }
   .section-title {
-    @apply text-4xl font-bold mb-8;
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    color: #0c1a14;
+    @apply text-4xl sm:text-5xl font-bold mb-8;
+    font-family: var(--font-display);
+    font-variation-settings: "SOFT" 100;
+    letter-spacing: -0.02em;
+    color: #2b2118;
   }
   .btn-primary {
-    @apply bg-primary-700 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-primary-800 transition duration-200 inline-block;
+    @apply bg-primary-500 text-white px-5 py-2.5 rounded-full font-medium hover:bg-primary-600 transition duration-200 inline-block;
+    box-shadow: 3px 3px 0 #2b2118;
   }
   .technology-badge {
-    @apply bg-primary-50 text-primary-800 border border-primary-100 text-xs px-2.5 py-1 rounded-full;
+    @apply bg-dune text-bark border border-gray-100 text-xs px-2.5 py-1 rounded-full;
   }
-  .hero-dot-grid {
-    background-image: radial-gradient(
-      circle,
-      rgba(20, 184, 166, 0.14) 1.5px,
-      transparent 1.5px
-    );
-    background-size: 28px 28px;
+  .font-hand {
+    font-family: var(--font-hand);
+  }
+  .topo-light {
+    background-image: url("/images/topo-light.svg");
+    background-size: 800px 600px;
+  }
+  .topo-dark {
+    background-image: url("/images/topo-dark.svg");
+    background-size: 800px 600px;
+  }
+  /* Paper card with a soft hand-cut shadow */
+  .paper-card {
+    @apply bg-cream rounded-2xl border border-gray-100;
+    box-shadow: 0 1px 0 rgba(43, 33, 24, 0.04), 4px 6px 0 rgba(43, 33, 24, 0.05);
   }
 }
 

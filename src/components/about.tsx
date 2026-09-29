@@ -49,7 +49,7 @@ const About: React.FC = () => {
         <div className="max-w-2xl">
           <p className="section-eyebrow">About me</p>
           <h2 className="section-title">I build for the people on the other side of the screen.</h2>
-          <div className="space-y-4 text-lg leading-relaxed" style={{ color: "#334155" }}>
+          <div className="space-y-4 text-lg leading-relaxed" style={{ color: "#4a3b2e" }}>
             <p>
               What I care about most is simple: whether what I build makes
               someone&apos;s day a little easier. I&apos;ve built for learners,
@@ -75,10 +75,10 @@ const About: React.FC = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-8 mt-6">
             {skillGroups.map((group) => (
               <div key={group.label}>
-                <p className="font-semibold text-sm mb-2" style={{ color: "#0c1a14" }}>
+                <p className="font-semibold text-sm mb-2" style={{ color: "#2b2118" }}>
                   {group.label}
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: "#64748b" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "#7a6857" }}>
                   {group.items.join(" · ")}
                 </p>
               </div>
